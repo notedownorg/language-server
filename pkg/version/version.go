@@ -21,16 +21,16 @@ import (
 )
 
 var (
-	version = "dev"
-	commit = "unknown"
-	date = "unknown"
+	version   = "dev"
+	commit    = "unknown"
+	date      = "unknown"
 	goVersion = runtime.Version()
 )
 
 type Info struct {
-	Version string `json:"version"`
-	Commit string `json:"commit"`
-	Date string `json:"date"`
+	Version   string `json:"version"`
+	Commit    string `json:"commit"`
+	Date      string `json:"date"`
 	GoVersion string `json:"goVersion"`
 }
 
@@ -52,9 +52,9 @@ func GetGoVersion() string {
 
 func GetInfo() Info {
 	return Info{
-		Version: version,
-		Commit: commit,
-		Date: date,
+		Version:   version,
+		Commit:    commit,
+		Date:      date,
 		GoVersion: goVersion,
 	}
 }
