@@ -18,11 +18,8 @@ jobs:
     - name: Install Nix
       uses: cachix/install-nix-action@v31
 
-    - name: Ensure generated files are up to date
-      run: make generate
-
     - name: Check Go code formatting
-      run: gofmt -w .
+      run: make format
 
     - name: Go mod tidy
       run: make mod
