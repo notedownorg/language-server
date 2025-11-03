@@ -1,0 +1,45 @@
+name: hygiene
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  format:
+    name: format
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Install Nix
+      uses: cachix/install-nix-action@v31
+
+    - name: Ensure generated files are up to date
+      run: make generate
+
+    - name: Check Go code formatting
+      run: gofmt -w .
+
+    - name: Go mod tidy
+      run: make mod
+
+    - name: Check dirty 
+      run: make dirty
+
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Install Nix
+      uses: cachix/install-nix-action@v31
+    
+    - name: Run linting
+      run: make lint
