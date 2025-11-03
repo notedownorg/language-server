@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "Bash(find:*)",
+      "Bash(go build:*)",
+      "Bash(./notedown-language-server:*)",
+      "Bash(make test:*)",
+      "Bash(go get:*)",
+      "Bash(git ls-remote:*)",
+      "Bash(gh run view:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
