@@ -23,7 +23,7 @@ before:
 
 builds:
   - id: notedown-language-server
-    main: ./language-server/
+    main: ./
     binary: notedown-language-server
     env:
       - CGO_ENABLED=0
@@ -35,10 +35,10 @@ builds:
       - arm64
     ldflags:
       - -s -w
-      - -X github.com/notedownorg/notedown/pkg/version.Version={{.Version}}
-      - -X github.com/notedownorg/notedown/pkg/version.Commit={{.Commit}}
-      - -X github.com/notedownorg/notedown/pkg/version.Date={{.Date}}
-      - -X github.com/notedownorg/notedown/pkg/version.BuiltBy=goreleaser
+      - -X github.com/notedownorg/language-server/pkg/version.version={{.Version}}
+      - -X github.com/notedownorg/language-server/pkg/version.commit={{.Commit}}
+      - -X github.com/notedownorg/language-server/pkg/version.date={{.Date}}
+      - -X github.com/notedownorg/language-server/pkg/version.goVersion={{.Env.GOVERSION}}
 
 archives:
   - id: notedown-language-server
