@@ -38,7 +38,6 @@ builds:
       - -X github.com/notedownorg/language-server/pkg/version.version={{.Version}}
       - -X github.com/notedownorg/language-server/pkg/version.commit={{.Commit}}
       - -X github.com/notedownorg/language-server/pkg/version.date={{.Date}}
-      - -X github.com/notedownorg/language-server/pkg/version.goVersion={{.Env.GOVERSION}}
 
 archives:
   - id: notedown-language-server
