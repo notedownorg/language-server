@@ -130,4 +130,5 @@ jobs:
 
           Built on: \`$(date -u '+%Y-%m-%d %H:%M:%S UTC')\`" \
             --prerelease \
-            dist/notedown-language-server_*
+            dist/*.tar.gz \
+            dist/checksums.txt
